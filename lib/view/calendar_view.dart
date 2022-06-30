@@ -19,49 +19,51 @@ class _CalendarViewState extends State<CalendarView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TableCalendar(
-          firstDay: DateTime.utc(1970, 1, 1),
-          lastDay: DateTime.utc(DateTime.now().year + 20, 12, 31),
-          focusedDay: _focusedDay,
-          calendarFormat: _calendarFormat,
-          onFormatChanged: (format) {
-            setState(() {
-              _calendarFormat = format;
-            });
-          },
-          selectedDayPredicate: (date) {
-            return isSameDay(_selectedDay, date);
-          },
-          onDaySelected: (selectedDay, focusedDay) {
-            if (!isSameDay(_selectedDay, selectedDay)) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          TableCalendar(
+            firstDay: DateTime.utc(1970, 1, 1),
+            lastDay: DateTime.utc(DateTime.now().year + 20, 12, 31),
+            focusedDay: _focusedDay,
+            calendarFormat: _calendarFormat,
+            onFormatChanged: (format) {
               setState(() {
-                _selectedDay = selectedDay;
-                _focusedDay = focusedDay;
+                _calendarFormat = format;
               });
-            }
-          },
-          onPageChanged: (focusedDay) {
-            _focusedDay = focusedDay;
-          },
-          headerVisible: true,
-          headerStyle: const HeaderStyle(
-            titleCentered: true,
-            formatButtonVisible: false,
+            },
+            selectedDayPredicate: (date) {
+              return isSameDay(_selectedDay, date);
+            },
+            onDaySelected: (selectedDay, focusedDay) {
+              if (!isSameDay(_selectedDay, selectedDay)) {
+                setState(() {
+                  _selectedDay = selectedDay;
+                  _focusedDay = focusedDay;
+                });
+              }
+            },
+            onPageChanged: (focusedDay) {
+              _focusedDay = focusedDay;
+            },
+            headerVisible: true,
+            headerStyle: const HeaderStyle(
+              titleCentered: true,
+              formatButtonVisible: false,
+            ),
+            calendarStyle: const CalendarStyle(
+                weekendTextStyle: TextStyle(color: Colors.red),
+                // todayTextStyle: TextStyle(color: Colors.green),
+                // todayDecoration: BoxDecoration(color: Colors.transparent)
+                // selectedDecoration: BoxDecoration(
+                //   color: Colors.blueGrey,
+                //   shape: BoxShape.circle,
+                // ),
+                ),
           ),
-          calendarStyle: const CalendarStyle(
-              weekendTextStyle: TextStyle(color: Colors.red),
-              // todayTextStyle: TextStyle(color: Colors.green),
-              // todayDecoration: BoxDecoration(color: Colors.transparent)
-              // selectedDecoration: BoxDecoration(
-              //   color: Colors.blueGrey,
-              //   shape: BoxShape.circle,
-              // ),
-              ),
-        ),
-        RecordSimpleList(),
-      ],
+          RecordSimpleList(),
+        ],
+      ),
     );
   }
 }

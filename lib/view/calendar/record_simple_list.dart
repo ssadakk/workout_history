@@ -35,6 +35,16 @@ class RecordSimpleList extends StatelessWidget {
         RecordSimpleCell(),
         RecordSimpleCell(),
         RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
+        RecordSimpleCell(),
       ],
     );
   }
