@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:workout_history/view/calendar/record_simple_cell.dart';
+import 'package:workout_history/view/calendar/record_simple_list.dart';
 
 import '../utils/logger.dart';
 
@@ -58,14 +60,7 @@ class _CalendarViewState extends State<CalendarView> {
               // ),
               ),
         ),
-        Row(
-          children: [
-            Expanded(child: Text('data1')),
-            Expanded(child: Text('data1')),
-            Expanded(child: Text('data1')),
-            Expanded(child: Text('data1')),
-          ],
-        )
+        RecordSimpleList(),
       ],
     );
   }
