@@ -1,10 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:workout_history/view/calendar/record_simple_cell.dart';
 
 class RecordSimpleList extends StatelessWidget {
-  const RecordSimpleList({Key? key}) : super(key: key);
+  RecordSimpleList({Key? key}) : super(key: key);
+
+  final List _itemList = [1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1];
 
   @override
   Widget build(BuildContext context) {
@@ -17,34 +17,37 @@ class RecordSimpleList extends StatelessWidget {
             border: Border.all(
               color: Colors.grey,
             ),
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             color: Colors.grey,
           ),
-          child: Center(child: Padding(
+          child: Center(
+              child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('EXERCISE', style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-            ),),
+            child: Text(
+              'EXERCISE',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           )),
         ),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
-        RecordSimpleCell(),
+        Container(
+          child: ListView.separated(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: _itemList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return RecordSimpleCell();
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return Divider(
+                thickness: 1,
+              );
+            },
+          ),
+        ),
       ],
     );
   }

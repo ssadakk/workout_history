@@ -8,7 +8,7 @@ class RecordSimpleCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
       child: Column(
         children: [
           Row(
