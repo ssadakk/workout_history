@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:workout_history/view/calendar/record_detail_list.dart';
 
 import 'calendar/record_simple_list.dart';
 
@@ -25,8 +26,11 @@ class _HomeViewState extends State<HomeView> {
           child: Row(
             children: [
               Expanded(child: Text('back')),
-              Expanded(child: Text('7/1')),
-              Expanded(child: Text('setting')),
+              Expanded(child: Center(child: Text('7/1'))),
+              Expanded(
+                  child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text('setting'))),
             ],
           ),
         ),
@@ -77,6 +81,7 @@ class _HomeViewState extends State<HomeView> {
             ),
           ],
         ),
+        RecordDetailList(),
       ],
     );
   }

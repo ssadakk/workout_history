@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:workout_history/utils/constants.dart';
 
 class RecordSimpleCell extends StatelessWidget {
   const RecordSimpleCell({Key? key}) : super(key: key);
-
-  final double? _fontSize = 18;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class RecordSimpleCell extends StatelessWidget {
                   child: Text(
                     'chest | incline 4 sets',
                     style: TextStyle(
-                      fontSize: _fontSize,
+                      fontSize: cellFontSize,
                     ),
                   )),
               Expanded(
@@ -38,7 +37,7 @@ class RecordSimpleCell extends StatelessWidget {
                   child: Text(
                     '6 x 12 x 3',
                     style: TextStyle(
-                      fontSize: _fontSize,
+                      fontSize: cellFontSize,
                     ),
                   )),
               Expanded(
@@ -48,7 +47,7 @@ class RecordSimpleCell extends StatelessWidget {
                       child: Text(
                         'xxx kg',
                         style: TextStyle(
-                          fontSize: _fontSize,
+                          fontSize: cellFontSize,
                         ),
                       )))
             ],
