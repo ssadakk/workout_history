@@ -19,21 +19,15 @@ class RecordDetailRow extends StatelessWidget {
         children: [
           Expanded(
             child: Text('$_index',
-                style: const TextStyle(
-                  fontSize: cellFontSize,
-                )),
+                style: cellTextStyle),
           ),
           Expanded(
             child: Text(' $_weight kg',
-                style: const TextStyle(
-                  fontSize: cellFontSize,
-                )),
+                style: cellTextStyle),
           ),
           Expanded(
             child: Text('$_reps reps',
-                style: const TextStyle(
-                  fontSize: cellFontSize,
-                )),
+                style: cellTextStyle),
           ),
           Expanded(
               child: Align(

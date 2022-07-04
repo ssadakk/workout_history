@@ -16,9 +16,7 @@ class RecordSimpleCell extends StatelessWidget {
                   flex: 5,
                   child: Text(
                     'chest | incline 4 sets',
-                    style: TextStyle(
-                      fontSize: cellFontSize,
-                    ),
+                    style: cellTextStyle,
                   )),
               Expanded(
                 flex: 1,
@@ -36,9 +34,7 @@ class RecordSimpleCell extends StatelessWidget {
                   flex: 5,
                   child: Text(
                     '6 x 12 x 3',
-                    style: TextStyle(
-                      fontSize: cellFontSize,
-                    ),
+                    style: cellTextStyle,
                   )),
               Expanded(
                   flex: 1,
@@ -46,9 +42,7 @@ class RecordSimpleCell extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Text(
                         'xxx kg',
-                        style: TextStyle(
-                          fontSize: cellFontSize,
-                        ),
+                        style: cellTextStyle,
                       )))
             ],
           )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:workout_history/utils/constants.dart';
 import 'package:workout_history/view/calendar/record_detail_row.dart';
 
 class RecordDetailCard extends StatelessWidget {
@@ -21,16 +22,16 @@ class RecordDetailCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('chest'),
-                Text('|'),
-                Text('bench'),
+                Text('chest', style: cellTextStyle,),
+                Text('|', style: cellTextStyle,),
+                Text('bench', style: cellTextStyle,),
               ],
             ),
             Row(
               children: [
-                Text('total volume '),
-                Text(':'),
-                Text('xxxkg'),
+                Text('total volume ', style: cellTextStyle,),
+                Text(':', style: cellTextStyle,),
+                Text('xxxkg', style: cellTextStyle,),
               ],
             ),
             ListView.builder(
