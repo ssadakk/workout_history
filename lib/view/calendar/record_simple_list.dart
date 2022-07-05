@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workout_history/view/calendar/record_simple_cell.dart';
+import 'package:workout_history/view/record_edit_view.dart';
 
 class RecordSimpleList extends StatelessWidget {
   RecordSimpleList({Key? key}) : super(key: key);
@@ -39,7 +40,15 @@ class RecordSimpleList extends StatelessWidget {
             shrinkWrap: true,
             itemCount: _itemList.length,
             itemBuilder: (BuildContext context, int index) {
-              return RecordSimpleCell();
+              return GestureDetector(
+                child: RecordSimpleCell(),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RecordEditView()));
+                },
+              );
             },
             separatorBuilder: (BuildContext context, int index) {
               return Divider(
